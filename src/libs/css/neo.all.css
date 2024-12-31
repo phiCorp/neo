@@ -1,5 +1,106 @@
 @charset "UTF-8";
 
+/* ============== colors ============== */
+
+:root,
+[data-neo-theme=light] {
+    --neo-color-white: rgb(255, 255, 255);
+    --neo-color-transparent: rgba(0, 0, 0, 0);
+
+    --neo-color-primary: rgb(66, 133, 244);
+    --neo-color-primary-hover: rgba(66, 133, 244, 0.8);
+    --neo-bg-primary: rgba(66, 133, 244, 0.15);
+
+    --neo-color-success: rgb(52, 168, 83);
+    --neo-color-success-hover: rgb(52, 168, 83, 0.8);
+    --neo-bg-success: rgba(52, 168, 83, 0.15);
+
+    --neo-color-alert: rgb(234, 67, 53);
+    --neo-color-alert-hover: rgba(234, 67, 53, 0.8);
+    --neo-bg-alert: rgba(234, 67, 53, 0.15);
+
+    --neo-color-idle: rgb(251, 188, 5);
+    --neo-color-idle-hover: rgba(251, 188, 5, 0.8);
+    --neo-bg-idle: rgba(251, 188, 5, 0.15);
+
+    --neo-color-foreground: rgb(255, 255, 255);
+    --neo-color-foreground-extra: rgb(31, 31, 31, 0.08);
+
+    --neo-color-background: rgb(248, 250, 253);
+    --neo-color-text: rgb(33, 33, 33);
+    --neo-color-text-supporting: rgb(117, 117, 117);
+    --neo-color-text-shy: rgba(0, 0, 0, 0.54);
+    --neo-color-text-primary: rgb(66, 133, 244);
+    --neo-color-mist: rgba(0, 0, 0, 0.06);
+    --neo-color-mist-extra: rgba(0, 0, 0, 0.13);
+    --neo-color-overlay: rgba(255, 255, 255, 0.8);
+    --neo-color-contrast: rgb(0, 0, 0);
+
+    --neo-color-red: rgb(255, 60, 56);
+    --neo-color-orange: rgb(251, 133, 0);
+    --neo-color-yellow: rgb(255, 213, 0);
+    --neo-color-light-green: rgb(139, 195, 74);
+    --neo-color-green: rgb(76, 175, 80);
+    --neo-color-dark-green: rgb(56, 142, 60);
+    --neo-color-teal: rgb(0, 150, 136);
+    --neo-color-cyan: rgb(123, 223, 242);
+    --neo-color-light-blue: rgb(194, 231, 255);
+    --neo-color-blue: rgb(66, 133, 244);
+    --neo-color-purple: rgb(156, 39, 176);
+    --neo-color-magenta: rgb(233, 30, 99);
+    --neo-color-pink: rgb(255, 64, 129);
+}
+
+[data-neo-theme=dark] {
+    --neo-color-white: rgb(255, 255, 255);
+    --neo-color-transparent: rgba(0, 0, 0, 0);
+
+    --neo-color-primary: rgb(31, 111, 235);
+    --neo-color-primary-hover: rgba(31, 111, 235, 0.8);
+    --neo-bg-primary: rgba(31, 111, 235, 0.15);
+
+    --neo-color-success: rgb(64, 201, 87);
+    --neo-color-success-hover: rgb(64, 201, 87, 0.8);
+    --neo-bg-success: rgba(64, 201, 87, 0.15);
+
+    --neo-color-alert: rgb(235, 86, 86);
+    --neo-color-alert-hover: rgba(235, 86, 86, 0.8);
+    --neo-bg-alert: rgba(235, 86, 86, 0.15);
+
+    --neo-color-idle: rgb(219, 129, 26);
+    --neo-color-idle-hover: rgba(219, 129, 26, 0.8);
+    --neo-bg-idle: rgba(219, 129, 26, 0.15);
+
+    --neo-color-foreground: rgb(31, 31, 31);
+    --neo-color-foreground-extra: rgb(51, 51, 51);
+
+    --neo-color-background: rgb(20, 20, 20);
+    --neo-color-text: rgb(227, 230, 232);
+    --neo-color-text-supporting: rgb(156, 156, 156);
+    --neo-color-text-shy: rgba(255, 255, 255, 0.28);
+    --neo-color-text-primary: rgb(68, 147, 248);
+    --neo-color-mist: rgba(255, 255, 255, 0.06);
+    --neo-color-mist-extra: rgba(255, 255, 255, 0.13);
+    --neo-color-overlay: rgba(3, 3, 3, 0.8);
+    --neo-color-contrast: rgb(255, 255, 255);
+
+    --neo-color-red: rgb(215, 38, 61);
+    --neo-color-orange: rgb(239, 152, 0);
+    --neo-color-yellow: rgb(255, 213, 0);
+    --neo-color-light-green: rgb(4, 231, 98);
+    --neo-color-green: rgb(64, 201, 64);
+    --neo-color-dark-green: rgb(31, 136, 61);
+    --neo-color-teal: rgb(0, 155, 119);
+    --neo-color-cyan: rgb(123, 223, 242);
+    --neo-color-light-blue: rgb(194, 231, 255);
+    --neo-color-blue: rgb(31, 111, 235);
+    --neo-color-purple: rgb(113, 97, 239);
+    --neo-color-magenta: rgb(217, 3, 104);
+    --neo-color-pink: rgb(255, 71, 126);
+}
+
+/* ============== colors ============== */
+/* =================================== */
 /* ============== init ============== */
 *,
 *::before,
@@ -3319,4 +3420,329 @@ iframe {
 
 /* ============== w & h ============== */
 /* ==================================== */
-/* ============== shadow ============== */
+/* ============== grid ============== */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col {
+    flex: 1;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+/* اندازه‌های ستون در اندازه‌های مختلف صفحه */
+.col-1 {
+    flex: 0 0 8.33%;
+    max-width: 8.33%;
+}
+
+.col-2 {
+    flex: 0 0 16.66%;
+    max-width: 16.66%;
+}
+
+.col-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+.col-4 {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+}
+
+.col-5 {
+    flex: 0 0 41.66%;
+    max-width: 41.66%;
+}
+
+.col-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.col-7 {
+    flex: 0 0 58.33%;
+    max-width: 58.33%;
+}
+
+.col-8 {
+    flex: 0 0 66.66%;
+    max-width: 66.66%;
+}
+
+.col-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+}
+
+.col-10 {
+    flex: 0 0 83.33%;
+    max-width: 83.33%;
+}
+
+.col-11 {
+    flex: 0 0 91.66%;
+    max-width: 91.66%;
+}
+
+.col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+/* تنظیمات واکنش‌گرا */
+@media (min-width: 576px) {
+    .col-sm-1 {
+        flex: 0 0 8.33%;
+        max-width: 8.33%;
+    }
+
+    .col-sm-2 {
+        flex: 0 0 16.66%;
+        max-width: 16.66%;
+    }
+
+    .col-sm-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+
+    .col-sm-4 {
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+    }
+
+    .col-sm-5 {
+        flex: 0 0 41.66%;
+        max-width: 41.66%;
+    }
+
+    .col-sm-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .col-sm-7 {
+        flex: 0 0 58.33%;
+        max-width: 58.33%;
+    }
+
+    .col-sm-8 {
+        flex: 0 0 66.66%;
+        max-width: 66.66%;
+    }
+
+    .col-sm-9 {
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+
+    .col-sm-10 {
+        flex: 0 0 83.33%;
+        max-width: 83.33%;
+    }
+
+    .col-sm-11 {
+        flex: 0 0 91.66%;
+        max-width: 91.66%;
+    }
+
+    .col-sm-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+    .col-md-1 {
+        flex: 0 0 8.33%;
+        max-width: 8.33%;
+    }
+
+    .col-md-2 {
+        flex: 0 0 16.66%;
+        max-width: 16.66%;
+    }
+
+    .col-md-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+
+    .col-md-4 {
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+    }
+
+    .col-md-5 {
+        flex: 0 0 41.66%;
+        max-width: 41.66%;
+    }
+
+    .col-md-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .col-md-7 {
+        flex: 0 0 58.33%;
+        max-width: 58.33%;
+    }
+
+    .col-md-8 {
+        flex: 0 0 66.66%;
+        max-width: 66.66%;
+    }
+
+    .col-md-9 {
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+
+    .col-md-10 {
+        flex: 0 0 83.33%;
+        max-width: 83.33%;
+    }
+
+    .col-md-11 {
+        flex: 0 0 91.66%;
+        max-width: 91.66%;
+    }
+
+    .col-md-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 992px) {
+    .col-lg-1 {
+        flex: 0 0 8.33%;
+        max-width: 8.33%;
+    }
+
+    .col-lg-2 {
+        flex: 0 0 16.66%;
+        max-width: 16.66%;
+    }
+
+    .col-lg-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+
+    .col-lg-4 {
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+    }
+
+    .col-lg-5 {
+        flex: 0 0 41.66%;
+        max-width: 41.66%;
+    }
+
+    .col-lg-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .col-lg-7 {
+        flex: 0 0 58.33%;
+        max-width: 58.33%;
+    }
+
+    .col-lg-8 {
+        flex: 0 0 66.66%;
+        max-width: 66.66%;
+    }
+
+    .col-lg-9 {
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+
+    .col-lg-10 {
+        flex: 0 0 83.33%;
+        max-width: 83.33%;
+    }
+
+    .col-lg-11 {
+        flex: 0 0 91.66%;
+        max-width: 91.66%;
+    }
+
+    .col-lg-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .col-xl-1 {
+        flex: 0 0 8.33%;
+        max-width: 8.33%;
+    }
+
+    .col-xl-2 {
+        flex: 0 0 16.66%;
+        max-width: 16.66%;
+    }
+
+    .col-xl-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+
+    .col-xl-4 {
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+    }
+
+    .col-xl-5 {
+        flex: 0 0 41.66%;
+        max-width: 41.66%;
+    }
+
+    .col-xl-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .col-xl-7 {
+        flex: 0 0 58.33%;
+        max-width: 58.33%;
+    }
+
+    .col-xl-8 {
+        flex: 0 0 66.66%;
+        max-width: 66.66%;
+    }
+
+    .col-xl-9 {
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+
+    .col-xl-10 {
+        flex: 0 0 83.33%;
+        max-width: 83.33%;
+    }
+
+    .col-xl-11 {
+        flex: 0 0 91.66%;
+        max-width: 91.66%;
+    }
+
+    .col-xl-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+/* ============== grid ============== */
+/* ==================================== */
