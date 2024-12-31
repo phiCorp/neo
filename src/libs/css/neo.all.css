@@ -3434,7 +3434,6 @@ iframe {
     padding-left: 15px;
 }
 
-/* اندازه‌های ستون در اندازه‌های مختلف صفحه */
 .col-1 {
     flex: 0 0 8.33%;
     max-width: 8.33%;
@@ -3495,7 +3494,6 @@ iframe {
     max-width: 100%;
 }
 
-/* تنظیمات واکنش‌گرا */
 @media (min-width: 576px) {
     .col-sm-1 {
         flex: 0 0 8.33%;
