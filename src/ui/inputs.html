@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" data-neo-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neo UI - Inputs</title>
+    <link rel="stylesheet" href="../libs/css/neo.all.css">
+    <link rel="stylesheet" href="neo-ui.input.css">
+    <style>
+        .input-box {
+            margin: 50px auto;
+            width: 80%;
+            padding: 20px;
+            background-color: var(--neo-color-foreground);
+            border-radius: 10px;
+
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="input-box">
+            <h2>NovaField</h2>
+            <div class="row p-4">
+                <div class="col-6 p-3">
+                    <div class="NovaField" data-state="default">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" placeholder="Enter your username">
+                        <p class="helper-text">Please enter a valid username.</p>
+                    </div>
+                </div>
+                <br>
+                <div class="col-6 p-3">
+                    <div class="NovaField" data-state="success">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Enter your email">
+                        <p class="helper-text">good.</p>
+                    </div>
+                </div>
+                <br>
+                <div class="col-6 p-3">
+                    <div class="NovaField" data-state="error">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Enter your password">
+                        <p class="helper-text">Wrong password</p>
+                    </div>
+                </div>
+                <br>
+                <div class="col-6 p-3">
+                    <div class="NovaField " data-state="disabled">
+                        <label for="disabled">Disabled Input</label>
+                        <input type="text" id="disabled" placeholder="This is disabled" disabled>
+                        <p class="helper-text">disable</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="input-box">
+            <h2>FluxInput</h2>
+            <div class="row p-4">
+                <div class="col-6 p-3">
+                    <div class="FluxInput" data-state="default">
+                        <div class="FluxInput-container">
+                            <input type="text" id="email" placeholder=" " required>
+                            <label for="email">Email</label>
+                        </div>
+                        <p class="helper-text">Please enter a valid email address.</p>
+                    </div>
+                </div>
+                <br>
+                <div class="col-6 p-3">
+                    <div class="FluxInput" data-state="success">
+                        <div class="FluxInput-container">
+                            <input type="text" id="email" placeholder=" " required>
+                            <label for="email">Email</label>
+                        </div>
+                        <p class="helper-text">good.</p>
+                    </div>
+                </div>
+                <br>
+                <div class="col-6 p-3">
+                    <div class="FluxInput" data-state="error">
+                        <div class="FluxInput-container">
+                            <input type="text" id="email" placeholder=" " required>
+                            <label for="email">Email</label>
+                        </div>
+                        <p class="helper-text">wrong email.</p>
+                    </div>
+                </div>
+                <br>
+                <div class="col-6 p-3">
+                    <div class="FluxInput" data-state="disabled">
+                        <div class="FluxInput-container">
+                            <input type="text" id="email" placeholder=" " disabled>
+                            <label for="email">this is disabled</label>
+                        </div>
+                        <p class="helper-text">disabled</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

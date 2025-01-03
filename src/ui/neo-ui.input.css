@@ -1,0 +1,153 @@
+/* start NovaField */
+.NovaField {
+    width: 100%;
+}
+
+.NovaField label {
+    display: block;
+    font-size: 14px;
+    color: var(--neo-color-text-supporting);
+    margin-bottom: 8px;
+}
+
+.NovaField input {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    background: var(--neo-color-foreground);
+    border: 2px solid var(--neo-color-mist-extra);
+    border-radius: 8px;
+    color: var(--neo-color-text);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.NovaField input:focus {
+    border-color: var(--neo-color-primary);
+    box-shadow: 0 0 8px var(--neo-bg-primary);
+    outline: none;
+}
+
+.NovaField .helper-text {
+    font-size: 12px;
+    margin-top: 5px;
+    color: var(--neo-color-text-supporting);
+}
+
+.NovaField[data-state="success"] input {
+    border-color: var(--neo-color-success);
+    box-shadow: 0 0 8px var(--neo-bg-success);
+}
+
+.NovaField[data-state="success"] .helper-text {
+    color: var(--neo-color-success);
+}
+
+.NovaField[data-state="error"] input {
+    border-color: var(--neo-color-alert);
+    box-shadow: 0 0 8px var(--neo-bg-alert);
+}
+
+.NovaField[data-state="error"] .helper-text {
+    color: var(--neo-color-alert);
+}
+
+.NovaField[data-state="disabled"] input {
+    background: var(--neo-color-mist);
+    border-color: var(--neo-color-mist);
+    color: var(--neo-color-text-shy);
+    cursor: not-allowed;
+}
+
+.NovaField[data-state="disabled"] .helper-text {
+    color: var(--neo-color-text-shy);
+}
+
+/* end NovaField */
+/* start FluxInput */
+.FluxInput {
+    width: 100%;
+    position: relative;
+}
+
+.FluxInput .FluxInput-container {
+    position: relative;
+    width: 100%;
+}
+
+.FluxInput input {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    background: var(--neo-color-foreground);
+    border: 2px solid var(--neo-color-mist-extra);
+    border-radius: 8px;
+    color: var(--neo-color-text);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.FluxInput input:focus {
+    border-color: var(--neo-color-primary);
+    box-shadow: 0 0 8px var(--neo-bg-primary);
+    outline: none;
+}
+
+.FluxInput input:focus+label,
+.FluxInput input:not(:placeholder-shown)+label {
+    transform: translateY(-30px);
+    font-size: 14px;
+}
+
+.FluxInput label {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: var(--neo-color-text-supporting);
+    pointer-events: none;
+    transition: all 0.3s ease;
+    background: var(--neo-color-foreground);
+    padding: 0 5px;
+}
+
+.FluxInput .helper-text {
+    font-size: 12px;
+    margin-top: 5px;
+    color: var(--neo-color-text-supporting);
+}
+
+.FluxInput[data-state="success"] input {
+    border-color: var(--neo-color-success);
+    box-shadow: 0 0 8px var(--neo-bg-success);
+}
+
+.FluxInput[data-state="success"] .helper-text {
+    color: var(--neo-color-success);
+}
+
+.FluxInput[data-state="error"] input {
+    border-color: var(--neo-color-alert);
+    box-shadow: 0 0 8px var(--neo-bg-alert);
+}
+
+.FluxInput[data-state="error"] .helper-text {
+    color: var(--neo-color-alert);
+}
+
+.FluxInput[data-state="disabled"] input {
+    background: var(--neo-color-mist);
+    border-color: var(--neo-color-mist);
+    color: var(--neo-color-text-shy);
+    cursor: not-allowed;
+}
+
+.FluxInput[data-state="disabled"] label {
+    color: var(--neo-color-text-shy);
+    background-color: transparent !important;
+}
+
+.FluxInput[data-state="disabled"] .helper-text {
+    color: var(--neo-color-text-shy);
+}
+
+/* end FluxInput */
