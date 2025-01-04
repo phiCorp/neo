@@ -151,3 +151,634 @@
 }
 
 /* end FluxInput */
+
+/* start rounded switch */
+.rounded-switch {
+    display: inline-block;
+    position: relative;
+    width: 50px;
+    height: 30px;
+}
+
+.rounded-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.rounded-switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--neo-color-mist-extra);
+    transition: 0.4s;
+    border-radius: 30px;
+}
+
+.rounded-switch .slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--neo-color-foreground);
+    transition: 0.4s;
+}
+
+.rounded-switch input:checked+.slider {
+    background-color: var(--neo-color-primary);
+}
+
+.rounded-switch input:checked+.slider:before {
+    transform: translateX(20px);
+}
+
+.rounded-switch[data-state="success"] input:checked+.slider {
+    background-color: var(--neo-color-success);
+}
+
+.rounded-switch[data-state="idle"] input:checked+.slider {
+    background-color: var(--neo-color-idle);
+}
+
+.rounded-switch[data-state="error"] input:checked+.slider {
+    background-color: var(--neo-color-alert);
+}
+
+.rounded-switch[data-state="none"] input:checked+.slider {
+    background-color: var(--neo-color-mist-extra);
+}
+
+/* disabled state */
+.rounded-switch[data-state="disabled"] {
+    cursor: not-allowed;
+}
+
+.rounded-switch[data-state="disabled"] .slider {
+    background-color: var(--neo-color-mist);
+}
+
+.rounded-switch[data-state="disabled"] input:checked+.slider {
+    background-color: var(--neo-color-mist);
+}
+
+.rounded-switch[data-state="disabled"] .slider:before {
+    background-color: var(--neo-color-text-shy);
+}
+
+/* end rounded swtich */
+
+/* start sharpen switch */
+.sharpen-switch {
+    display: inline-block;
+    position: relative;
+    width: 50px;
+    height: 30px;
+}
+
+.sharpen-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.sharpen-switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--neo-color-mist-extra);
+    transition: 0.4s;
+    border-radius: 4px;
+}
+
+.sharpen-switch .slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    border-radius: 4px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--neo-color-foreground);
+    transition: 0.4s;
+}
+
+.sharpen-switch input:checked+.slider {
+    background-color: var(--neo-color-primary);
+}
+
+.sharpen-switch input:checked+.slider:before {
+    transform: translateX(20px);
+}
+
+.sharpen-switch[data-state="success"] input:checked+.slider {
+    background-color: var(--neo-color-success);
+}
+
+.sharpen-switch[data-state="idle"] input:checked+.slider {
+    background-color: var(--neo-color-idle);
+}
+
+.sharpen-switch[data-state="error"] input:checked+.slider {
+    background-color: var(--neo-color-alert);
+}
+
+.sharpen-switch[data-state="none"] input:checked+.slider {
+    background-color: var(--neo-color-mist-extra);
+}
+
+/* disabled state */
+.sharpen-switch[data-state="disabled"] {
+    cursor: not-allowed;
+}
+
+.sharpen-switch[data-state="disabled"] .slider {
+    background-color: var(--neo-color-mist);
+}
+
+.sharpen-switch[data-state="disabled"] input:checked+.slider {
+    background-color: var(--neo-color-mist);
+}
+
+.sharpen-switch[data-state="disabled"] .slider:before {
+    background-color: var(--neo-color-text-shy);
+}
+
+/* end sharpen swtich */
+
+
+/* start RadioButton */
+/* start RadioButton */
+.RadioButton {
+    display: inline-block;
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
+
+.RadioButton input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.RadioButton .circle,
+.RadioButton .square {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: 0.3s;
+}
+
+.RadioButton .circle {
+    border-radius: 50%;
+    background-color: var(--neo-color-mist-extra);
+    border: 2px solid var(--neo-color-mist);
+}
+
+.RadioButton .square {
+    border-radius: 4px;
+    background-color: var(--neo-color-mist-extra);
+    border: 2px solid var(--neo-color-mist);
+}
+
+.RadioButton .circle:after,
+.RadioButton .square:after {
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    /* Keep it transparent initially */
+    transition: 0.3s;
+    border-radius: 50%;
+    width: 14px;
+    height: 14px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    /* Center is invisible initially */
+}
+
+.RadioButton .square:after {
+    border-radius: 2px;
+}
+
+/* When input is checked, make the center visible and change its color */
+.RadioButton input:checked+.circle,
+.RadioButton input:checked+.square {
+    background-color: var(--neo-color-foreground);
+    border-color: var(--neo-color-primary);
+}
+
+.RadioButton input:checked+.circle:after,
+.RadioButton input:checked+.square:after {
+    opacity: 1;
+    background-color: var(--neo-color-primary);
+    /* Change the center color when checked */
+}
+
+/* Additional color states */
+.RadioButton[data-state="success"] input:checked+.circle,
+.RadioButton[data-state="success"] input:checked+.square {
+    background-color: var(--neo-color-foreground);
+    border-color: var(--neo-color-success);
+}
+
+.RadioButton[data-state="success"] input:checked+.circle:after,
+.RadioButton[data-state="success"] input:checked+.square:after {
+    background-color: var(--neo-color-success);
+}
+
+.RadioButton[data-state="error"] input:checked+.circle,
+.RadioButton[data-state="error"] input:checked+.square {
+    background-color: var(--neo-color-foreground);
+    border-color: var(--neo-color-alert);
+}
+
+.RadioButton[data-state="error"] input:checked+.circle:after,
+.RadioButton[data-state="error"] input:checked+.square:after {
+    background-color: var(--neo-color-alert);
+}
+
+.RadioButton[data-state="idle"] input:checked+.circle,
+.RadioButton[data-state="idle"] input:checked+.square {
+    background-color: var(--neo-color-foreground);
+    border-color: var(--neo-color-idle);
+}
+
+.RadioButton[data-state="idle"] input:checked+.circle:after,
+.RadioButton[data-state="idle"] input:checked+.square:after {
+    background-color: var(--neo-color-idle);
+}
+
+/* disabled state */
+.RadioButton[data-state="disabled"] {
+    cursor: not-allowed;
+}
+
+.RadioButton[data-state="disabled"] .circle,
+.RadioButton[data-state="disabled"] .square {
+    background-color: var(--neo-color-mist);
+    border-color: var(--neo-color-mist);
+}
+
+.RadioButton[data-state="disabled"] .circle:after,
+.RadioButton[data-state="disabled"] .square:after {
+    background-color: var(--neo-color-text-shy);
+}
+
+/* end RadioButton */
+
+/* start RadioSelector */
+.RadioSelector {
+    position: relative;
+    width: fit-content;
+    height: 55px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 8px;
+    background: var(--neo-color-foreground);
+    border: 2px solid var(--neo-color-mist-extra);
+}
+
+.RadioSelector.rounded {
+    border-radius: 999px !important;
+}
+
+.RadioSelectorItem {
+    position: relative;
+    flex-basis: auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--neo-color-text-supporting);
+    font-size: 17px;
+    font-weight: 500;
+    transition: transform 0.3s ease;
+    margin: 10px 10px;
+}
+
+.RadioSelectorItemLabel {
+    position: relative;
+    height: 37px;
+    cursor: pointer;
+    line-height: 37px;
+    width: 100%;
+    text-align: center;
+    border-radius: 4px;
+    transition: background-color 0.3s, transform 0.3s;
+    padding: 0 10px;
+}
+
+.RadioSelector.rounded .RadioSelectorItemLabel {
+    border-radius: 999px !important;
+}
+
+.RadioSelectorItemLabel:hover {
+    background-color: var(--neo-color-mist);
+}
+
+.RadioSelectorItemRadio {
+    appearance: none;
+    display: none;
+}
+
+.RadioSelectorItemRadio:checked+.RadioSelectorItemLabel {
+    color: var(--neo-color-white);
+    background-color: var(--neo-color-primary);
+    transform: scale(1.1);
+}
+
+/* Responsive font sizes */
+@media (max-width: 992px) {
+    .RadioSelectorItem {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .RadioSelectorItem {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 576px) {
+    .RadioSelectorItem {
+        font-size: 13px;
+    }
+}
+
+/* end RadioSelector */
+
+/* start Checkbox */
+.Checkbox {
+    display: inline-block;
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
+
+.Checkbox input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+
+.Checkbox .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--neo-color-mist-extra);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Checkbox.rounded .checkmark {
+    border-radius: 50% !important;
+}
+
+.Checkbox .checkmark:before {
+    content: "✗";
+    /* Default to cross */
+    font-size: 18px;
+    color: var(--neo-color-text-shy);
+    transition: all 0.3s;
+}
+
+.Checkbox input:checked+.checkmark:before {
+    content: "✓";
+    /* Show checkmark when checked */
+    color: #fff;
+}
+
+.Checkbox input:checked+.checkmark {
+    background-color: var(--neo-color-primary);
+}
+
+.Checkbox[data-state="success"] input:checked+.checkmark {
+    background-color: var(--neo-color-success);
+}
+
+.Checkbox[data-state="error"] input:checked+.checkmark {
+    background-color: var(--neo-color-alert);
+}
+
+.Checkbox[data-state="idle"] input:checked+.checkmark {
+    background-color: var(--neo-color-idle);
+}
+
+/* Disabled state */
+.Checkbox[data-state="disabled"] {
+    cursor: not-allowed;
+}
+
+.Checkbox[data-state="disabled"] .checkmark {
+    background-color: var(--neo-color-mist);
+}
+
+.Checkbox[data-state="disabled"] input:checked+.checkmark {
+    background-color: var(--neo-color-mist);
+}
+
+.Checkbox[data-state="disabled"] .checkmark:before {
+    color: var(--neo-color-text-shy);
+}
+
+/* end Checkbox */
+/* start NovaSelect */
+.NovaSelect {
+    position: relative;
+    width: 100%;
+}
+
+.NovaSelect select {
+    width: 100%;
+    padding: 12px 15px 12px 12px;
+    /* Padding to make space for the icon */
+    font-size: 16px;
+    background: var(--neo-color-foreground);
+    border: 2px solid var(--neo-color-mist-extra);
+    border-radius: 8px;
+    color: var(--neo-color-text);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    appearance: none;
+    /* Remove default dropdown arrow */
+    -webkit-appearance: none;
+    /* Remove default dropdown arrow for Safari */
+    -moz-appearance: none;
+    /* Remove default dropdown arrow for Firefox */
+}
+
+/* Custom SVG Icon */
+.NovaSelect select {
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"%3E%3Cpath d="M3 4l3 3 3-3" stroke="%23B1B1B1" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/%3E%3C/svg%3E');
+    background-position: right 12px center;
+    /* Positioned at the right */
+    background-repeat: no-repeat;
+    background-size: 20px;
+}
+
+.NovaSelect select:focus {
+    border-color: var(--neo-color-primary);
+    box-shadow: 0 0 8px var(--neo-bg-primary);
+    outline: none;
+}
+
+.NovaSelect .helper-text {
+    font-size: 12px;
+    margin-top: 5px;
+    color: var(--neo-color-text-supporting);
+}
+
+/* Success state */
+.NovaSelect[data-state="success"] select {
+    border-color: var(--neo-color-success);
+    box-shadow: 0 0 8px var(--neo-bg-success);
+}
+
+.NovaSelect[data-state="success"] .helper-text {
+    color: var(--neo-color-success);
+}
+
+/* Error state */
+.NovaSelect[data-state="error"] select {
+    border-color: var(--neo-color-alert);
+    box-shadow: 0 0 8px var(--neo-bg-alert);
+}
+
+.NovaSelect[data-state="error"] .helper-text {
+    color: var(--neo-color-alert);
+}
+
+/* Disabled state */
+.NovaSelect[data-state="disabled"] select {
+    background: var(--neo-color-mist);
+    border-color: var(--neo-color-mist);
+    color: var(--neo-color-text-shy);
+    cursor: not-allowed;
+}
+
+.NovaSelect[data-state="disabled"] .helper-text {
+    color: var(--neo-color-text-shy);
+}
+
+/* end NovaSelect */
+/* start NovaTextArea */
+.NovaTextArea {
+    width: 100%;
+}
+
+.NovaTextArea label {
+    display: block;
+    font-size: 14px;
+    color: var(--neo-color-text-supporting);
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+    /* Added transition for label color change */
+}
+
+.NovaTextArea textarea {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    background: var(--neo-color-foreground);
+    border: 2px solid var(--neo-color-mist-extra);
+    border-radius: 8px;
+    color: var(--neo-color-text);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    resize: none;
+    overflow-y: auto;
+    /* Enable scrolling */
+}
+
+/* Custom scroll bar styles */
+.NovaTextArea textarea::-webkit-scrollbar {
+    width: 8px;
+    /* Width of the scrollbar */
+}
+
+.NovaTextArea textarea::-webkit-scrollbar-thumb {
+    background-color: var(--neo-color-primary);
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.NovaTextArea textarea::-webkit-scrollbar-thumb:hover {
+    background-color: var(--neo-color-primary-hover);
+}
+
+.NovaTextArea textarea::-webkit-scrollbar-track {
+    background: var(--neo-color-mist);
+    border-radius: 4px;
+}
+
+.NovaTextArea textarea:focus {
+    border-color: var(--neo-color-primary);
+    box-shadow: 0 0 8px var(--neo-bg-primary);
+    outline: none;
+    background-color: var(--neo-color-background-focused);
+    /* Optional: background color on focus */
+}
+
+.NovaTextArea .helper-text {
+    font-size: 12px;
+    margin-top: 5px;
+    color: var(--neo-color-text-supporting);
+    transition: color 0.3s ease;
+}
+
+.NovaTextArea[data-state="success"] textarea {
+    border-color: var(--neo-color-success);
+    box-shadow: 0 0 8px var(--neo-bg-success);
+    background-color: var(--neo-bg-success-light);
+    /* Light background for success */
+}
+
+.NovaTextArea[data-state="success"] .helper-text {
+    color: var(--neo-color-success);
+}
+
+.NovaTextArea[data-state="error"] textarea {
+    border-color: var(--neo-color-alert);
+    box-shadow: 0 0 8px var(--neo-bg-alert);
+    background-color: var(--neo-bg-alert-light);
+    /* Light background for error */
+}
+
+.NovaTextArea[data-state="error"] .helper-text {
+    color: var(--neo-color-alert);
+}
+
+.NovaTextArea[data-state="disabled"] textarea {
+    background: var(--neo-color-mist);
+    border-color: var(--neo-color-mist);
+    color: var(--neo-color-text-shy);
+    cursor: not-allowed;
+}
+
+.NovaTextArea[data-state="disabled"] .helper-text {
+    color: var(--neo-color-text-shy);
+}
+
+/* end NovaTextArea */

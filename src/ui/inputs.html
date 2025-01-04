@@ -57,7 +57,207 @@
                     </div>
                 </div>
             </div>
+            <h2>Sharpen Switch</h2>
+            <div class="row p-4">
+                <div class="col-3 p-3">
+                    <label class="sharpen-switch" data-state="default">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="col-3 p-3">
+                    <label class="sharpen-switch" data-state="success">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="col-3 p-3">
+                    <label class="sharpen-switch" data-state="idle">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="col-3 p-3">
+                    <label class="sharpen-switch" data-state="error">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="col-3 p-3">
+                    <label class="sharpen-switch" data-state="disabled">
+                        <input type="checkbox" disabled>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="col-3 p-3">
+                    <label class="sharpen-switch" data-state="none">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+            <h2>Sharpen Radio</h2>
+            <div class="row p-4">
+                <div class="col-3 p-3">
+                    <label class="RadioButton" data-state="default">
+                        <input type="radio" name="exam" checked>
+                        <span class="square"></span>
+                    </label>
+                </div>
+                <div class="col-3 p-3">
+                    <label class="RadioButton" data-state="success">
+                        <input type="radio" name="exam">
+                        <span class="square"></span>
+                    </label>
+                </div>
+                <div class="col-3 p-3">
+                    <label class="RadioButton" data-state="idle">
+                        <input type="radio" name="exam">
+                        <span class="square"></span>
+                    </label>
+                </div>
+                <div class="col-3 p-3">
+                    <label class="RadioButton" data-state="error">
+                        <input type="radio" name="exam">
+                        <span class="square"></span>
+                    </label>
+                </div>
+                <div class="col-3 p-3">
+                    <label class="RadioButton" data-state="disabled">
+                        <input type="radio" name="exam" disabled>
+                        <span class="square"></span>
+                    </label>
+                </div>
+            </div>
+            <h2>Sharpen Radio Selector</h2>
+            <div class="row p-4">
+                <div class="col-6 p-3">
+                    <div class="RadioSelector">
+                        <div class="RadioSelectorItem">
+                            <input type="radio" id="type1" name="type" value="1" class="RadioSelectorItemRadio" checked>
+                            <label for="type1" class="RadioSelectorItemLabel">Apartment</label>
+                        </div>
+                        <div class="RadioSelectorItem">
+                            <input type="radio" id="type2" name="type" value="2" class="RadioSelectorItemRadio">
+                            <label for="type2" class="RadioSelectorItemLabel">Townhouse</label>
+                        </div>
+                        <div class="RadioSelectorItem">
+                            <input type="radio" id="type3" name="type" value="3" class="RadioSelectorItemRadio">
+                            <label for="type3" class="RadioSelectorItemLabel">Vila</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2>Checkbox</h2>
+            <div class="row p-4">
+                <div class="col-6 p-3">
+                    <div class="Checkbox" data-state="default">
+                        <input type="checkbox" id="checkbox4">
+                        <label for="checkbox4" class="checkmark"></label>
+                    </div>
+
+                    <div class="Checkbox" data-state="success">
+                        <input type="checkbox" id="checkbox1">
+                        <label for="checkbox1" class="checkmark"></label>
+                    </div>
+
+                    <div class="Checkbox" data-state="idle">
+                        <input type="checkbox" id="checkbox5">
+                        <label for="checkbox5" class="checkmark"></label>
+                    </div>
+
+                    <div class="Checkbox" data-state="error">
+                        <input type="checkbox" id="checkbox2">
+                        <label for="checkbox2" class="checkmark"></label>
+                    </div>
+
+                    <div class="Checkbox" data-state="disabled">
+                        <input type="checkbox" id="checkbox3" disabled>
+                        <label for="checkbox3" class="checkmark"></label>
+                    </div>
+                </div>
+            </div>
+            <h2>Select</h2>
+            <div class="row p-4">
+                <div class="col-6 p-3">
+                    <div class="NovaSelect" data-state="success">
+                        <select>
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                        </select>
+                        <div class="helper-text">Select your option</div>
+                    </div>
+                </div>
+                <div class="col-6 p-3">
+                    <div class="NovaSelect" data-state="error">
+                        <select>
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                        </select>
+                        <div class="helper-text">There was an error with your selection</div>
+                    </div>
+                </div>
+                <div class="col-6 p-3">
+                    <div class="NovaSelect" data-state="disabled">
+                        <select disabled>
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                        </select>
+                        <div class="helper-text">This selection is disabled</div>
+                    </div>
+                </div>
+                <div class="col-6 p-3">
+                    <div class="NovaSelect">
+                        <select>
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                        </select>
+                        <div class="helper-text">Please select an option</div>
+                    </div>
+                </div>
+            </div>
+            <h2>NovaTextArea</h2>
+            <div class="row p-4">
+                <div class="col-6 p-3">
+                    <div class="NovaTextArea" data-state="default">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" rows="4"
+                            placeholder="Write your message here..."></textarea>
+                        <div class="helper-text">This is a helper text for guidance.</div>
+                    </div>
+                </div>
+                <div class="col-6 p-3">
+                    <div class="NovaTextArea" data-state="success">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" rows="4"
+                            placeholder="Write your message here..."></textarea>
+                        <div class="helper-text">This is a helper text for guidance.</div>
+                    </div>
+                </div>
+                <div class="col-6 p-3">
+                    <div class="NovaTextArea" data-state="error">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" rows="4"
+                            placeholder="Write your message here..."></textarea>
+                        <div class="helper-text">This is a helper text for guidance.</div>
+                    </div>
+                </div>
+                <div class="col-6 p-3">
+                    <div class="NovaTextArea" data-state="disabled">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" rows="4"
+                            placeholder="Write your message here..."></textarea>
+                        <div class="helper-text">This is a helper text for guidance.</div>
+                    </div>
+                </div>
+            </div>
         </div>
+
+
         <div class="input-box">
             <h2>FluxInput</h2>
             <div class="row p-4">
@@ -101,7 +301,129 @@
                     </div>
                 </div>
             </div>
+            <h2>Rounded Switch</h2>
+            <div class="row p-4">
+                <div class="col-3 p-3">
+                    <label class="rounded-switch" data-state="default">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="col-3 p-3">
+                    <label class="rounded-switch" data-state="success">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="col-3 p-3">
+                    <label class="rounded-switch" data-state="idle">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="col-3 p-3">
+                    <label class="rounded-switch" data-state="error">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="col-3 p-3">
+                    <label class="rounded-switch" data-state="disabled">
+                        <input type="checkbox" disabled>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="col-3 p-3">
+                    <label class="rounded-switch" data-state="none">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+            <h2>Rounded Radio</h2>
+            <div class="row p-4">
+                <div class="col-3 p-3">
+                    <label class="RadioButton" data-state="default">
+                        <input type="radio" name="example" checked>
+                        <span class="circle"></span>
+                    </label>
+                </div>
+                <div class="col-3 p-3">
+                    <label class="RadioButton" data-state="success">
+                        <input type="radio" name="example">
+                        <span class="circle"></span>
+                    </label>
+                </div>
+                <div class="col-3 p-3">
+                    <label class="RadioButton" data-state="idle">
+                        <input type="radio" name="example">
+                        <span class="circle"></span>
+                    </label>
+                </div>
+                <div class="col-3 p-3">
+                    <label class="RadioButton" data-state="error">
+                        <input type="radio" name="example">
+                        <span class="circle"></span>
+                    </label>
+                </div>
+                <div class="col-3 p-3">
+                    <label class="RadioButton" data-state="disabled">
+                        <input type="radio" name="example" disabled>
+                        <span class="circle"></span>
+                    </label>
+                </div>
+            </div>
+            <h2>Rounded Radio Selector</h2>
+            <div class="row p-4">
+                <div class="col-6 p-3">
+                    <div class="RadioSelector rounded">
+                        <div class="RadioSelectorItem">
+                            <input type="radio" id="type12" name="type2" value="1" class="RadioSelectorItemRadio"
+                                checked>
+                            <label for="type12" class="RadioSelectorItemLabel">Apartment</label>
+                        </div>
+                        <div class="RadioSelectorItem">
+                            <input type="radio" id="type22" name="type2" value="2" class="RadioSelectorItemRadio">
+                            <label for="type22" class="RadioSelectorItemLabel">Townhouse</label>
+                        </div>
+                        <div class="RadioSelectorItem">
+                            <input type="radio" id="type32" name="type2" value="3" class="RadioSelectorItemRadio">
+                            <label for="type32" class="RadioSelectorItemLabel">Vila</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2>Checkbox</h2>
+            <div class="row p-4">
+                <div class="col-6 p-3">
+                    <div class="Checkbox rounded" data-state="default">
+                        <input type="checkbox" id="checkbox41">
+                        <label for="checkbox41" class="checkmark "></label>
+                    </div>
+
+                    <div class="Checkbox rounded" data-state="success">
+                        <input type="checkbox" id="checkbox11">
+                        <label for="checkbox11" class="checkmark "></label>
+                    </div>
+
+                    <div class="Checkbox rounded" data-state="idle">
+                        <input type="checkbox" id="checkbox51">
+                        <label for="checkbox51" class="checkmark "></label>
+                    </div>
+
+                    <div class="Checkbox rounded" data-state="error">
+                        <input type="checkbox" id="checkbox21">
+                        <label for="checkbox21" class="checkmark "></label>
+                    </div>
+
+                    <div class="Checkbox rounded" data-state="disabled">
+                        <input type="checkbox" id="checkbox31" disabled>
+                        <label for="checkbox31" class="checkmark "></label>
+                    </div>
+                </div>
+            </div>
         </div>
+
     </div>
 </body>
 

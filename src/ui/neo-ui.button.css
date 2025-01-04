@@ -1,0 +1,90 @@
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--neo-color-white);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+    text-transform: capitalize;
+}
+
+.button.primary {
+    background: var(--neo-color-primary);
+}
+
+.button.primary:hover {
+    background: var(--neo-color-primary-hover);
+}
+
+.button.success {
+    background: var(--neo-color-success);
+}
+
+.button.success:hover {
+    background: var(--neo-color-success-hover);
+}
+
+.button.alert {
+    background: var(--neo-color-alert);
+}
+
+.button.alert:hover {
+    background: var(--neo-color-alert-hover);
+}
+
+.button.idle {
+    background: var(--neo-color-idle);
+}
+
+.button.idle:hover {
+    background: var(--neo-color-idle-hover);
+}
+
+.button.white {
+    background: #fff;
+    color: #333;
+}
+
+.button.white:hover {
+    background: #dfdfdf;
+}
+
+.button.black {
+    background: #000;
+    color: #fff;
+}
+
+.button.black:hover {
+    background: #111;
+    color: #fff;
+}
+
+.button.outline {
+    background: transparent;
+    color: var(--neo-color-primary);
+    border: 2px solid var(--neo-color-primary);
+}
+
+.button.outline:hover {
+    background: var(--neo-color-primary);
+    color: var(--neo-color-white);
+}
+
+.button.disabled {
+    background: var(--neo-color-mist);
+    color: var(--neo-color-white-shy);
+    cursor: not-allowed;
+    border: none;
+}
+
+.button.bt-round {
+    border-radius: 8px;
+}
+
+.button.bt-pill {
+    border-radius: 50px;
+}
