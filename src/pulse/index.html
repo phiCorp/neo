@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+  class Pulse {
+    static queue = [];
+    static isDisplaying = false;
+    static container = null;
+    static defaults = {
+      position: 'top-right',
+      duration: 30000,
+      theme: 'light',
+    };
+
+    static getContainer() {
+      if (!this.container) {
+        this.container = document.createElement('div');
+        this.container.className = `pulse-container pulse-${this.defaults.position}`;
+        document.body.appendChild(this.container);
+      }
+      return this.container;
+    }
+
+    static config(options = {}) {
+      this.defaults = { ...this.defaults, ...options };
+    }
+
+    static addToQueue(message, type, options) {
+      const { duration, theme } = { ...this.defaults, ...options };
+      this.queue.push({ message, type, duration, theme });
+      this.processQueue();
+    }
+
+    static async processQueue() {
+      if (this.isDisplaying || this.queue.length === 0) return;
+
+      this.isDisplaying = true;
+      const { message, type, duration, theme } = this.queue.shift();
+      const alertBox = this.createAlert(message, type, theme);
+
+      this.getContainer().appendChild(alertBox);
+
+      await this.displayAlert(alertBox, duration);
+      this.isDisplaying = false;
+
+      this.processQueue();
+    }
+
+    static displayAlert(alertBox, duration) {
+      return new Promise((resolve) => {
+        const autoRemove = setTimeout(() => {
+          this.removeAlert(alertBox).then(resolve);
+        }, duration);
+
+        alertBox.querySelector('.pulse-close').addEventListener('click', () => {
+          clearTimeout(autoRemove);
+          this.removeAlert(alertBox).then(resolve);
+        });
+      });
+    }
+
+    static removeAlert(alertBox) {
+      return new Promise((resolve) => {
+        alertBox.classList.add('hide');
+        alertBox.addEventListener('transitionend', () => {
+          alertBox.remove();
+          resolve();
+        });
+      });
+    }
+
+    static createAlert(message, type, theme) {
+      const alertBox = document.createElement('div');
+      alertBox.className = `pulse-alert pulse-${type} pulse-${theme}`;
+      alertBox.innerHTML = `
+            <div class="pulse-icon">${this.getAnimatedIcon(type)}</div>
+            <span class="pulse-message">${message}</span>
+            <button class="pulse-close">&times;</button>
+        `;
+      return alertBox;
+    }
+
+    static injectStyles() {
+      if (document.getElementById('pulse-styles')) return;
+
+      const styles = `
+            .pulse-container {
+                position: fixed;
+                z-index: 10000;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+            .pulse-top-right {
+                top: 20px;
+                right: 20px;
+                align-items: flex-end;
+            }
+            .pulse-alert {
+                padding: 15px 20px;
+                border-radius: 8px;
+                font-size: 16px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                animation: fadeIn 0.3s ease-in-out;
+                transition: opacity 0.3s ease, transform 0.3s ease;
+            }
+            .pulse-alert.hide {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(-10px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            .pulse-success {
+                background-color: #4caf50;
+                color: white;
+            }
+            .pulse-error {
+                background-color: #f44336;
+                color: white;
+            }
+            .pulse-warning {
+                background-color: #ff9800;
+                color: white;
+            }
+            .pulse-info {
+                background-color: #2196f3;
+                color: white;
+            }
+        `;
+
+      const styleSheet = document.createElement('style');
+      styleSheet.id = 'pulse-styles';
+      styleSheet.type = 'text/css';
+      styleSheet.innerText = styles;
+      document.head.appendChild(styleSheet);
+    }
+
+    static getAnimatedIcon(type) {
+      const icons = {
+        success: `
+               <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path fill="#000000" d="M512 64a448 448 0 1 1 0 896 448 448 0 0 1 0-896zm-55.808 536.384-99.52-99.584a38.4 38.4 0 1 0-54.336 54.336l126.72 126.72a38.272 38.272 0 0 0 54.336 0l262.4-262.464a38.4 38.4 0 1 0-54.272-54.336L456.192 600.384z"/></svg>
+            `,
+        error: `
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon icon-error">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="15" y1="9" x2="9" y2="15" />
+                    <line x1="9" y1="9" x2="15" y2="15" />
+                </svg>
+            `,
+        warning: `
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon icon-warning">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="12" y1="8" x2="12" y2="12" />
+                    <line x1="12" y1="16" x2="12.01" y2="16" />
+                </svg>
+            `,
+        info: `
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon icon-info">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="12" y1="8" x2="12" y2="12" />
+                    <line x1="12" y1="16" x2="12.01" y2="16" />
+                </svg>
+            `,
+      };
+      return icons[type] || '';
+    }
+
+    static success(message, options = {}) {
+      this.addToQueue(message, 'success', options);
+    }
+
+    static error(message, options = {}) {
+      this.addToQueue(message, 'error', options);
+    }
+
+    static warning(message, options = {}) {
+      this.addToQueue(message, 'warning', options);
+    }
+
+    static info(message, options = {}) {
+      this.addToQueue(message, 'info', options);
+    }
+  }
+
+  Pulse.injectStyles();
+
+  Pulse.success('Operation was successful!');
+  Pulse.warning('Be careful!');
+  Pulse.info('This is some information!');
+
+
+
+</script>
+
+</html>
